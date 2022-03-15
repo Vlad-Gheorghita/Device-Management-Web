@@ -1,6 +1,4 @@
 
-
-
 .app-header {
   justify-content: space-between;
   position: fixed;
@@ -24,7 +22,7 @@
   float: left;
   padding: 60px 50px 40px 50px;
   width: 100%;
-  background: #fff;
+  background: #90caf9;
   border-radius: 10px;
   transform: scale(1);
   -webkit-transform: scale(1);
@@ -83,4 +81,8 @@
 }
 .login-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
   padding: 0.8375em 0;
+}
+
+.button{
+    background-color: #3fc1c0;
 }

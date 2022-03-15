@@ -1,7 +1,7 @@
 <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
     <mat-card class="box">
       <mat-card-header>
-        <mat-card-title>Sign in</mat-card-title>
+        <mat-card-title>Log in</mat-card-title>
       </mat-card-header>
         <mat-card-content>
           <mat-form-field class="example-full-width">
@@ -11,8 +11,8 @@
             <input matInput placeholder="Password" type="password" name="password" required>
           </mat-form-field>
         </mat-card-content>
-        <button mat-raised-button class="btn-block button" type="button" style="margin-bottom: 10px;">Sign in</button>
-        <button mat-raised-button class="btn-block button" type="button" >Sign up</button>
+        <button mat-raised-button class="btn-block button" type="button" style="margin-bottom: 10px;">Login</button>
+        <button mat-raised-button class="btn-block button" type="button" (click)="onRegister()">Register</button>
     </mat-card>
   </div>
   
