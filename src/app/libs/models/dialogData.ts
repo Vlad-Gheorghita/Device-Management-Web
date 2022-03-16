@@ -1,4 +1,8 @@
+import { Device } from "./Device";
+
 export interface DialogData {
-    animal: string;
-    name: string;
+    // name: string;
+    // manufacturer: string;
+
+    device?: Device;
 }

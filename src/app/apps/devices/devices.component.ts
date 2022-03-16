@@ -10,25 +10,23 @@ import { DeviceDialogComponent } from './device-dialog/device-dialog.component';
 })
 export class DevicesComponent implements OnInit {
 
+  device: Device = {
+    name: "Legion 5",
+    manufacturer: "LG",
+    type: "Notebook",
+    operatingSystem: "Windows 11",
+    operatingSystemVersion: "21H2",
+    processor: "AMD Ryzen 7 5800H",
+    ram: 16
+  };
+
   animal: string;
   name: string;
 
-  // device: Device = {name: "Laptop", manufacturer: "Lg"};
-
-  constructor(public dialog: MatDialog) {}
+  constructor() {}
   ngOnInit(): void {
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(DeviceDialogComponent, {
-      width: '250px',
-      data: {name: this.name, animal: this.animal},
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.animal = result;
-    });
-  }
+  
 
 }

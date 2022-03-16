@@ -1,6 +1,6 @@
-<div style="margin-top: 2%">
-    <mat-card style="width: 280px; height: 150px;">
-        <mat-card-title>{{device.name}}</mat-card-title>
+<div style="margin-top: 2%" (click)="openDialog()">
+    <mat-card style="width: 280px; height: 150px;" class="card" matRipple >
+        <mat-card-title >{{device.name}}</mat-card-title>
         <mat-card-content>{{device.manufacturer}}</mat-card-content>
     </mat-card>
 </div>

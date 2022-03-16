@@ -1,18 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Device } from 'src/app/libs/models/Device';
+import { DeviceDialogComponent } from '../device-dialog/device-dialog.component';
 
 @Component({
   selector: 'app-device-card',
   templateUrl: './device-card.component.html',
-  styleUrls: ['./device-card.component.scss']
+  styleUrls: ['./device-card.component.scss'],
 })
 export class DeviceCardComponent implements OnInit {
 
-  device: Device = {name: "Laptop", manufacturer: "LG"};
+  @Input() device: Device;
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DeviceDialogComponent, {
+      width: '250px',
+      data: {device: this.device}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    });
   }
 
 }

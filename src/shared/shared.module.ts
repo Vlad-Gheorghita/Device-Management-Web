@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgScrollbarModule } from 'ngx-scrollbar';
 
 
 
@@ -10,11 +11,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   imports: [
     CommonModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    NgScrollbarModule
   ],
   exports: [
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    NgScrollbarModule
   ]
 })
 export class SharedModule { }
