@@ -8,12 +8,8 @@ const routes: Routes = [
     component: CoreComponent,
     children: [
       {
-        path: 'device-list',
-        loadChildren: () => import('../apps/device-list/device-list.module').then((m) => m.DeviceListModule)
-      },
-      {
-        path: 'device-management',
-        loadChildren: () => import('../apps/device-management/device-management.module').then((m) => m.DeviceManagementModule)
+        path: 'devices',
+        loadChildren: () => import('../apps/devices/devices.module').then((m) => m.DevicesModule)
       }
     ]
   }

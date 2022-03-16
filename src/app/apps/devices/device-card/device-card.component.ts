@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Device } from 'src/app/libs/models/Device';
 
 @Component({
   selector: 'app-device-card',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./device-card.component.scss']
 })
 export class DeviceCardComponent implements OnInit {
+
+  device: Device = {name: "Laptop", manufacturer: "LG"};
 
   constructor() { }
 
