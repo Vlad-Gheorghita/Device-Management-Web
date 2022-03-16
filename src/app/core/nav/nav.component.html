@@ -1,7 +1,15 @@
 <mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" [matMenuTriggerFor]="menu">
         <mat-icon>menu</mat-icon>
     </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+            <span>My Devices</span>
+        </button>
+        <button mat-menu-item (click)="onClickAvailableDevices()">
+            <span>Available Devices</span>
+        </button>
+    </mat-menu>
     <span>Device Management</span>
     <span class="spacer"></span>
     <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
