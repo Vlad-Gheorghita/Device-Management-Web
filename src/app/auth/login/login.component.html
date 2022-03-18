@@ -1,18 +1,20 @@
 <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
     <mat-card class="box">
+      <form #form="ngForm" (ngSubmit)="login(form)" fxLayout="column" fxLayoutGap="4px">
       <mat-card-header>
         <mat-card-title>Log in</mat-card-title>
       </mat-card-header>
         <mat-card-content>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Email" name="email" required>
+            <input [(ngModel)]="email" type="email" matInput placeholder="Email" name="email" required email>
           </mat-form-field>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Password" type="password" name="password" required>
+            <input [(ngModel)]="password" matInput placeholder="Password" type="password" name="password" required>
           </mat-form-field>
         </mat-card-content>
-        <button mat-raised-button class="btn-block button" type="button" style="margin-bottom: 10px;">Login</button>
+        <button mat-raised-button class="btn-block button" type="submit" style="margin-bottom: 10px;">Login</button>
         <button mat-raised-button class="btn-block button" type="button" (click)="onRegister()">Register</button>
+      </form>
     </mat-card>
   </div>
   
