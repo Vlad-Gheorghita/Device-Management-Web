@@ -10,42 +10,45 @@ import { DeviceDialogComponent } from './device-dialog/device-dialog.component';
   styleUrls: ['./devices.component.scss']
 })
 export class DevicesComponent implements OnInit {
-
-  // device: Device = {
-  //   name: "Legion 5",
-  //   manufacturer: "LG",
-  //   type: "Notebook",
-  //   operatingSystem: "Windows 11",
-  //   operatingSystemVersion: "21H2",
-  //   processor: "AMD Ryzen 7 5800H",
-  //   ram: 16
-  // };
-
   devices: Device[] = [];
-
-  // animal: string;
-  // name: string;
-
-  constructor(private devicesService: DevicesService) {
-  }
-
-  getAllDevices(){
-    this.devicesService.getDevices().subscribe((res: Device[])=>{
-      this.devices = res;
-    });
-  }
-
-  async getAllDevicesPromises(){
-    const result = await this.devicesService.getDevices().toPromise();
-    if(result){
-      this.devices = result;
-    }
+  constructor(private dialog: MatDialog, private devicesService: DevicesService) {
   }
 
   ngOnInit() {
     this.getAllDevicesPromises();
   }
 
-  
+  getAllDevices() {
+    this.devicesService.getDevices().subscribe((res: Device[]) => {
+      this.devices = res;
+    });
+  }
 
+  async getAllDevicesPromises() {
+    const result = await this.devicesService.getDevices().toPromise();
+    if (result) {
+      this.devices = result;
+    }
+  }
+
+  openDialog(device: Device) {
+    const dialogRef = this.dialog.open(DeviceDialogComponent, {
+      width: 'auto',
+      data: device,
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.getAllDevicesPromises();
+    });
+  }
+
+  openAddDialog(){
+    const dialogRef = this.dialog.open(DeviceDialogComponent, {
+      width: 'auto',
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.getAllDevicesPromises();
+    });
+  }
 }

@@ -1,24 +1,36 @@
-
-
-
-<!-- ADAUGA ICONITE!! -->
-<mat-card-content style="width: auto;">
-    <mat-card-title>{{dialogContent.name}}</mat-card-title>
-    <mat-card-subtitle>{{dialogContent.manufacturer}}</mat-card-subtitle>
-    <mat-card-content>
-        <h2 matLine>Type</h2>
-        <p>{{dialogContent.type}}</p>
-        <h2 matLine>Operating System</h2>
-        <p>{{dialogContent.operatingSystem}}</p>
-        <h2 matLine>OS Version</h2>
-        <p>{{dialogContent.operatingSystemVersion}}</p>
-        <h2 matLine>Processor</h2>
-        <p>{{dialogContent.processor}}</p>
-        <h2 matLine>RAM Memory</h2>
-        <p>{{dialogContent.ram}} GB</p>
-    </mat-card-content>
-    <mat-card-actions align="end">
-        <button mat-button [disabled]="dialogContent.user !== null">Assign to me</button>
-        <button mat-button [disabled]="!dialogContent.user">Unassign</button>
-    </mat-card-actions>
-</mat-card-content>
+<form #form="ngForm" (ngSubmit)="onSubmit(form)" fxLayout="column" style="width:350px;">
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput required [(ngModel)]="dialogContent.name" name="name" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Manufacturer</mat-label>
+        <input matInput required [(ngModel)]="dialogContent.manufacturer" name="manufacturer" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Type</mat-label>
+        <input matInput required [(ngModel)]="dialogContent.type" name="type" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Operating Systen</mat-label>
+        <input matInput required [(ngModel)]="dialogContent.operatingSystem" name="operatingSystem" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>OS Version</mat-label>
+        <input matInput required [(ngModel)]="dialogContent.operatingSystemVersion" name="os" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Processor</mat-label>
+        <input matInput required [(ngModel)]="dialogContent.processor" name="processor" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Ram Memory</mat-label>
+        <input matInput required [(ngModel)]="dialogContent.ram" name="ram" />
+    </mat-form-field>
+    <button mat-button color="primary" [disabled]="dialogContent.user !== null">Assign to me</button>
+    <button mat-button [disabled]="!dialogContent.user">Unassign</button>
+    <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="2px">
+        <button mat-raised-button type="submit" color="primary">{{data ? 'Edit' : 'Add'}}</button>
+        <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
+    </div>
+</form>

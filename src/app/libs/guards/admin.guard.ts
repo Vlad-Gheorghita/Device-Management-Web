@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../auth/auth.service';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class AdminGuard implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const user = this.authService.userValue;
 
-    if (this.checkAdmin(user.roles))
+    if (this.checkAdmin(user))
       return true;
 
     this.toastr.warning("You cannot access this page", "Unauthorized!")
@@ -20,12 +21,19 @@ export class AdminGuard implements CanActivate {
     return false;
   }
 
-  checkAdmin(userRoles: any) {
+  // checkAdmin(userRoles: any) {
+  //   let isAdmin = false;
+  //   for (var role in userRoles) {
+  //     if (role === "Admin")
+  //       isAdmin = true;
+  //   }
+  //   return isAdmin;
+  // }
+
+  checkAdmin(user: User) {
     let isAdmin = false;
-    for (var role in userRoles) {
-      if (role === "Admin")
-        isAdmin = true;
-    }
+    let res = user.roles.find(r => r.name === "Admin")
+    if(!(res == undefined)) isAdmin = true;
     return isAdmin;
   }
 }

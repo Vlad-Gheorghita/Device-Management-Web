@@ -6,6 +6,12 @@
         <button mat-menu-item>
             <span>My Devices</span>
         </button>
+        <button *ngIf="checkAdmin(user)" mat-menu-item (click)="goToTrackUsers()">
+            <span>Track Users</span>
+        </button>
+        <button *ngIf="checkAdmin(user)" mat-menu-item (click)="onClickLogOut()">
+            <span>Users</span>
+        </button>
         <button mat-menu-item (click)="onClickLogOut()">
             <span>Log Out</span>
         </button>

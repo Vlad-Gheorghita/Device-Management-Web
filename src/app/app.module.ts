@@ -17,7 +17,6 @@ import { BasicAuthInterceptor } from './libs/Interceptors/basic-auth.interceptor
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule,
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({

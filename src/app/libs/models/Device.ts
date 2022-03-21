@@ -1,6 +1,6 @@
 import { User } from "./user";
 
-export interface Device {
+export class Device {
     id?: number;
     name?: string;
     manufacturer?: string;

@@ -6,6 +6,7 @@ import { DevicesComponent } from './devices.component';
 import { DeviceCardComponent } from './device-card/device-card.component';
 import { SharedModule } from 'src/shared/shared.module';
 import { DeviceDialogComponent } from './device-dialog/device-dialog.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { DeviceDialogComponent } from './device-dialog/device-dialog.component';
   imports: [
     CommonModule,
     DevicesRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ]
 })
 export class DevicesModule { }

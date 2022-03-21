@@ -16,6 +16,11 @@ const routes: Routes = [
         path: 'admin',
         loadChildren: () => import('../apps/admin/admin.module').then((m) => m.AdminModule),
         canActivate: [AdminGuard]
+      },
+      {
+        path: 'track-users',
+        loadChildren: () => import('../apps/track-users/track-users.module').then((m) => m.TrackUsersModule),
+        canActivate: [AdminGuard]
       }
     ]
   }
