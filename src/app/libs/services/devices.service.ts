@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { Device } from '../../models/device'
+import { Device } from '../models/device'
 
 @Injectable({
   providedIn: 'root'

@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { finalize } from 'rxjs/operators';
 import { Device } from 'src/app/libs/models/device';
-import { DevicesService } from 'src/app/libs/services/device/devices.service';
+import { DevicesService } from 'src/app/libs/services/devices.service';
 
 @Component({
   selector: 'app-device-dialog',

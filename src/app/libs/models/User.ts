@@ -1,10 +1,11 @@
 import { Device } from "./device";
 import { Role } from "./role";
+import { UserLocation } from "./user-location";
 
-export interface User {
+export class User {
     id?: number;
     name?: string;
-    location?: string;
+    location?: UserLocation;
     roles?: Role[];
     devices?: Device;
     token?: string;

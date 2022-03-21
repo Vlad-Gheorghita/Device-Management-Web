@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Device } from 'src/app/libs/models/device';
-import { DevicesService } from 'src/app/libs/services/device/devices.service';
+import { DevicesService } from 'src/app/libs/services/devices.service';
 import { DeviceDialogComponent } from './device-dialog/device-dialog.component';
 
 @Component({

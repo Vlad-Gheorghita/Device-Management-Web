@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { TrackUsersRoutingModule } from './track-users-routing.module';
 import { TrackUsersComponent } from './track-users.component';
 import { MapComponent } from './map/map.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { SharedModule } from 'src/shared/shared.module';
 
 
 @NgModule({
@@ -13,7 +15,10 @@ import { MapComponent } from './map/map.component';
   ],
   imports: [
     CommonModule,
-    TrackUsersRoutingModule
+    TrackUsersRoutingModule,
+    GoogleMapsModule,
+    SharedModule
   ]
+
 })
 export class TrackUsersModule { }
