@@ -1,29 +1,21 @@
-<!-- <div *ngIf="dialogContent.device">
-    <p>{{dialogContent.device.name}}</p>
-    <p>{{dialogContent.device.manufacturer}}</p>
-    <p>{{dialogContent.device.type}}</p>
-    <p>{{dialogContent.device.operatingSystem}}</p>
-    <p>{{dialogContent.device.operatingSystemVersion}}</p>
-    <p>{{dialogContent.device.processor}}</p>
-    <p>{{dialogContent.device.ram}}</p>
-</div> -->
+
 
 
 <!-- ADAUGA ICONITE!! -->
 <mat-card-content style="width: auto;">
-    <mat-card-title>{{dialogContent.device.name}}</mat-card-title>
-    <mat-card-subtitle>{{dialogContent.device.manufacturer}}</mat-card-subtitle>
+    <mat-card-title>{{dialogContent.name}}</mat-card-title>
+    <mat-card-subtitle>{{dialogContent.manufacturer}}</mat-card-subtitle>
     <mat-card-content>
         <h2 matLine>Type</h2>
-        <p>{{dialogContent.device.type}}</p>
+        <p>{{dialogContent.type}}</p>
         <h2 matLine>Operating System</h2>
-        <p>{{dialogContent.device.operatingSystem}}</p>
+        <p>{{dialogContent.operatingSystem}}</p>
         <h2 matLine>OS Version</h2>
-        <p>{{dialogContent.device.operatingSystemVersion}}</p>
+        <p>{{dialogContent.operatingSystemVersion}}</p>
         <h2 matLine>Processor</h2>
-        <p>{{dialogContent.device.processor}}</p>
+        <p>{{dialogContent.processor}}</p>
         <h2 matLine>RAM Memory</h2>
-        <p>{{dialogContent.device.ram}} GB</p>
+        <p>{{dialogContent.ram}} GB</p>
     </mat-card-content>
     <mat-card-actions align="end">
         <button mat-button>Assign to me</button>

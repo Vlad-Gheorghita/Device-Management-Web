@@ -6,16 +6,17 @@
         <button mat-menu-item>
             <span>My Devices</span>
         </button>
-        <button mat-menu-item (click)="onClickAvailableDevices()">
-            <span>Available Devices</span>
+        <button mat-menu-item (click)="onClickLogOut()">
+            <span>Log Out</span>
         </button>
     </mat-menu>
     <span>Device Management</span>
     <span class="spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
         <mat-icon>favorite</mat-icon>
     </button>
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
         <mat-icon>share</mat-icon>
-    </button>
+    </button> -->
+    <span>Welcome {{user.name}}</span>
 </mat-toolbar>

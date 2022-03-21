@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Device } from 'src/app/libs/models/Device';
+import { Device } from 'src/app/libs/models/device';
 import { DeviceDialogComponent } from '../device-dialog/device-dialog.component';
 
 @Component({
@@ -15,12 +15,16 @@ export class DeviceCardComponent implements OnInit {
   constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    if (this.device.type == '0')
+      this.device.type = 'Phone';
+    else
+      this.device.type = 'Tablet';
   }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DeviceDialogComponent, {
       width: '250px',
-      data: {device: this.device}
+      data: this.device,
     });
 
     dialogRef.afterClosed().subscribe(result => {
