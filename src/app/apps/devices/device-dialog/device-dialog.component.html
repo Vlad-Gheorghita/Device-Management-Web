@@ -18,7 +18,7 @@
         <p>{{dialogContent.ram}} GB</p>
     </mat-card-content>
     <mat-card-actions align="end">
-        <button mat-button>Assign to me</button>
-        <button mat-button>Unassign</button>
+        <button mat-button [disabled]="dialogContent.user !== null">Assign to me</button>
+        <button mat-button [disabled]="!dialogContent.user">Unassign</button>
     </mat-card-actions>
 </mat-card-content>
