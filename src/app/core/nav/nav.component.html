@@ -1,6 +1,6 @@
-<mat-toolbar color="primary">
+<mat-toolbar style="background-color: #219ebc; ">
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" [matMenuTriggerFor]="menu">
-        <mat-icon>menu</mat-icon>
+        <mat-icon style="color: white;">menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
         <button *ngIf="!checkAdmin(user)" mat-menu-item>
@@ -19,7 +19,7 @@
             <span>Log Out</span>
         </button>
     </mat-menu>
-    <span>Device Management</span>
+    <span style="color:white">Device Management</span>
     <span class="spacer"></span>
-    <span>Welcome {{user.name}}</span>
+    <span style="color:white">Welcome {{user.name}}</span>
 </mat-toolbar>

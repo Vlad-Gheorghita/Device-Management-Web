@@ -38,7 +38,7 @@
     <button mat-button [disabled]="checkUnassignAction()" (click)="unassignUser()" style="margin-bottom: 10px;">Unassign</button>
     
     <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="2px">
-        <button mat-raised-button type="submit" color="primary" [disabled]="!checkAdmin()">{{data ? 'Edit' : 'Add'}}</button>
+        <button mat-raised-button type="submit" class="button-primary" [disabled]="!checkAdmin()">{{data ? 'Edit' : 'Add'}}</button>
         <button mat-raised-button color="warn" (click)="onDelete()" [disabled]="!checkAdmin()">Delete</button>
     </div>
 </form>

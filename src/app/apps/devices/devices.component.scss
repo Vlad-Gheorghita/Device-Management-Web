@@ -1,13 +1,6 @@
-.scrollbar {
-    --scrollbar-border-radius: 7px;
-    --scrollbar-padding: 4px;
-    --scrollbar-viewport-margin: 0;
-    --scrollbar-track-color: transparent;
-    --scrollbar-wrapper-color: transparent;
-    --scrollbar-thumb-color: rgba(233,84,32, 0.6);
-    --scrollbar-thumb-hover-color: var(--scrollbar-thumb-color);
-    --scrollbar-size: 5px;
-    --scrollbar-hover-size: var(--scrollbar-size);
-    --scrollbar-thumb-transition: height ease-out 150ms, width ease-out 150ms;
-    --scrollbar-track-transition: height ease-out 150ms, width ease-out 150ms;
-}
+
+
+.button-primary {
+    background-color: #219ebc;
+    color: white;
+  }
