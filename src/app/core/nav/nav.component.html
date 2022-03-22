@@ -3,13 +3,16 @@
         <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-        <button mat-menu-item>
+        <button *ngIf="!checkAdmin(user)" mat-menu-item>
             <span>My Devices</span>
+        </button>
+        <button mat-menu-item (click)="goToDevices()">
+            <span>Devices</span>
         </button>
         <button *ngIf="checkAdmin(user)" mat-menu-item (click)="goToTrackUsers()">
             <span>Track Users</span>
         </button>
-        <button *ngIf="checkAdmin(user)" mat-menu-item (click)="onClickLogOut()">
+        <button *ngIf="checkAdmin(user)" mat-menu-item (click)="goToUsers()">
             <span>Users</span>
         </button>
         <button mat-menu-item (click)="onClickLogOut()">
@@ -18,11 +21,5 @@
     </mat-menu>
     <span>Device Management</span>
     <span class="spacer"></span>
-    <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-    </button> -->
     <span>Welcome {{user.name}}</span>
 </mat-toolbar>

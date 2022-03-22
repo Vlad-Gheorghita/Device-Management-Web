@@ -42,7 +42,7 @@ export class DevicesComponent implements OnInit {
     });
   }
 
-  openAddDialog(){
+  openAddDialog() {
     const dialogRef = this.dialog.open(DeviceDialogComponent, {
       width: 'auto',
     });
@@ -50,5 +50,14 @@ export class DevicesComponent implements OnInit {
     dialogRef.afterClosed().subscribe(() => {
       this.getAllDevicesPromises();
     });
+  }
+
+  checkAdmin() {
+
+    let curentUser = JSON.parse(localStorage.getItem('user'));
+    let res = curentUser.roles.find((r: any) => r.name === "Admin");
+
+    if (res == undefined) return false;
+    return true;
   }
 }

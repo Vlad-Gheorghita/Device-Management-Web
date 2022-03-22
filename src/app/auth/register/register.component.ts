@@ -8,20 +8,13 @@ import { AuthService } from 'src/app/libs/auth/auth.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
 
   username: string;
   email: string;
   password: string;
 
   constructor(private router: Router, private authService: AuthService) { }
-
-  ngOnInit(): void {
-  }
-
-  onRegister() {
-
-  }
 
   register(form: NgForm) {
     if (form.invalid) return;

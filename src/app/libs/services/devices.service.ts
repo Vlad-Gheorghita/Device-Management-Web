@@ -20,18 +20,26 @@ export class DevicesService {
   }
 
   deleteDeviceById(id: number) {
-    return this.http.delete(this.baseUrl + '/device/delete-device/' + id)
+    return this.http.delete(this.baseUrl + '/device/delete-device/' + id);
   }
 
   addDevice(device: Device) {
-    return this.http.post(this.baseUrl + '/device', device)
+    return this.http.post(this.baseUrl + '/device', device);
   }
 
   editDevice(device: Device) {
     return this.http.put(this.baseUrl + '/device', {
       id: device.id, name: device.name, manufacturer: device.manufacturer,
       type: 0, operatingSystem: device.operatingSystem, operatingSystemVersion: device.operatingSystemVersion, processor: device.processor, ram: device.ram
-    })
+    });
+  }
+
+  assignUserToDevice(userId: number, deviceId: number) {
+    return this.http.put(this.baseUrl + '/device/assign-device/' + deviceId + '/' + userId, {});
+  }
+
+  unassignUserFromDevice(deviceId: number) {
+    return this.http.put(this.baseUrl + '/device/unassign-device/' + deviceId, {});
   }
 
 }

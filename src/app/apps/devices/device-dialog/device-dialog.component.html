@@ -1,34 +1,34 @@
 <form #form="ngForm" (ngSubmit)="onSubmit(form)" fxLayout="column" style="width:350px;">
     <mat-form-field appearance="fill">
         <mat-label>Name</mat-label>
-        <input matInput required [(ngModel)]="dialogContent.name" name="name" />
+        <input matInput required [(ngModel)]="dialogContent.name" name="name" [disabled]="!checkAdmin()"/>
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Manufacturer</mat-label>
-        <input matInput required [(ngModel)]="dialogContent.manufacturer" name="manufacturer" />
+        <input matInput required [(ngModel)]="dialogContent.manufacturer" name="manufacturer" [disabled]="!checkAdmin()"/>
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Type</mat-label>
-        <input matInput required [(ngModel)]="dialogContent.type" name="type" />
+        <input matInput required [(ngModel)]="dialogContent.type" name="type" [disabled]="!checkAdmin()"/>
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Operating Systen</mat-label>
-        <input matInput required [(ngModel)]="dialogContent.operatingSystem" name="operatingSystem" />
+        <input matInput required [(ngModel)]="dialogContent.operatingSystem" name="operatingSystem" [disabled]="!checkAdmin()"/>
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>OS Version</mat-label>
-        <input matInput required [(ngModel)]="dialogContent.operatingSystemVersion" name="os" />
+        <input matInput required [(ngModel)]="dialogContent.operatingSystemVersion" name="os" [disabled]="!checkAdmin()"/>
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Processor</mat-label>
-        <input matInput required [(ngModel)]="dialogContent.processor" name="processor" />
+        <input matInput required [(ngModel)]="dialogContent.processor" name="processor" [disabled]="!checkAdmin()"/>
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Ram Memory</mat-label>
-        <input matInput required [(ngModel)]="dialogContent.ram" name="ram" />
+        <input matInput required [(ngModel)]="dialogContent.ram" name="ram" [disabled]="!checkAdmin()"/>
     </mat-form-field>
-    <button mat-button color="primary" [disabled]="dialogContent.user !== null">Assign to me</button>
-    <button mat-button [disabled]="!dialogContent.user">Unassign</button>
+    <button mat-button color="primary" [disabled]="checkAssignAction()" (click)="assignUser()">Assign to me</button>
+    <button mat-button [disabled]="checkUnassignAction()" (click)="unassignUser()">Unassign</button>
     <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="2px">
         <button mat-raised-button type="submit" color="primary">{{data ? 'Edit' : 'Add'}}</button>
         <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>

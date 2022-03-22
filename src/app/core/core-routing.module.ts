@@ -13,7 +13,7 @@ const routes: Routes = [
         loadChildren: () => import('../apps/devices/devices.module').then((m) => m.DevicesModule)
       },
       {
-        path: 'admin',
+        path: 'users',
         loadChildren: () => import('../apps/admin/admin.module').then((m) => m.AdminModule),
         canActivate: [AdminGuard]
       },

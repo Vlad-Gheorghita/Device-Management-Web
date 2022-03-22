@@ -30,10 +30,17 @@ export class NavComponent implements OnInit {
     let res = user.roles.find(r => r.name === "Admin")
     if(res == undefined) return false;
     return true;
-    
+  }
+
+  goToDevices(){
+    this.router.navigateByUrl("/app/devices")
   }
 
   goToTrackUsers(){
     this.router.navigateByUrl("/app/track-users")
+  }
+
+  goToUsers(){
+    this.router.navigateByUrl("/app/users")
   }
 }

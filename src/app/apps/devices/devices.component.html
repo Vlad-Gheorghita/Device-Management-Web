@@ -1,4 +1,4 @@
-<button (click)="openAddDialog()" style="margin-left: 90%; margin-top:10px;" mat-raised-button color="primary">Add</button>
+<button *ngIf="checkAdmin()"  (click)="openAddDialog()" style="margin-left: 90%; margin-top:10px;" mat-raised-button color="primary">Add</button>
 <mat-card fxLayout="row wrap" fxLayoutGap="2%"
     style="margin: 2% 2% 2% 2%; height: calc(100% - 15vh);overflow-x:hidden; overflow-y: auto;">
     <div (click)="openDialog(device)" *ngFor="let device of devices" style="padding: 1px 1px 1px 1px;">
