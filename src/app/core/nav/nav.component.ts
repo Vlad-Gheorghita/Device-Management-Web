@@ -11,9 +11,7 @@ import { User } from 'src/app/libs/models/user';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-
   user: User;
-
 
   constructor(private router: Router, private authService: AuthService) { }
 

@@ -5,11 +5,4 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './track-users.component.html',
   styleUrls: ['./track-users.component.scss']
 })
-export class TrackUsersComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class TrackUsersComponent { }

@@ -17,7 +17,6 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     AuthRoutingModule,
     SharedModule,
-    FormsModule
   ]
 })
 export class AuthModule { }

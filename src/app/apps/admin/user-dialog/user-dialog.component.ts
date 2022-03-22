@@ -11,7 +11,6 @@ import { UserService } from 'src/app/libs/services/user.service';
   styleUrls: ['./user-dialog.component.scss']
 })
 export class UserDialogComponent {
-
   dialogContent: User;
 
   constructor(
@@ -31,5 +30,4 @@ export class UserDialogComponent {
       console.log(res);
     });
   }
-
 }

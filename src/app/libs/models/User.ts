@@ -10,4 +10,6 @@ export class User {
     devices?: Device;
     token?: string;
     email?: string;
+    longitude?: string;
+    latitude?: string;
 }

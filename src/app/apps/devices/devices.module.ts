@@ -19,7 +19,6 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     DevicesRoutingModule,
     SharedModule,
-    FormsModule
   ]
 })
 export class DevicesModule { }

@@ -21,19 +21,10 @@ export class AdminGuard implements CanActivate {
     return false;
   }
 
-  // checkAdmin(userRoles: any) {
-  //   let isAdmin = false;
-  //   for (var role in userRoles) {
-  //     if (role === "Admin")
-  //       isAdmin = true;
-  //   }
-  //   return isAdmin;
-  // }
-
   checkAdmin(user: User) {
     let isAdmin = false;
     let res = user.roles.find(r => r.name === "Admin")
-    if(!(res == undefined)) isAdmin = true;
+    if (!(res == undefined)) isAdmin = true;
     return isAdmin;
   }
 }

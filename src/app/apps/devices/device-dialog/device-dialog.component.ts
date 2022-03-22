@@ -19,17 +19,16 @@ export class DeviceDialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: Device,
     private dialogRef: MatDialogRef<DeviceDialogComponent>,
     private devicesService: DevicesService
-  ) {
-    this.dialogContent = data;
+  ) { }
+  
+  ngOnInit() {
+    this.currentUser = JSON.parse(localStorage.getItem('user'));
     if (this.data) {
-      this.dialogContent = data;
+      this.dialogContent = this.data;
     }
     else {
       this.dialogContent = new Device();
     }
-  }
-  ngOnInit() {
-    this.currentUser = JSON.parse(localStorage.getItem('user'));
   }
 
   onSubmit(form: NgForm) {

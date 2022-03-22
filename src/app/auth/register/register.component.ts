@@ -9,7 +9,6 @@ import { AuthService } from 'src/app/libs/auth/auth.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-
   username: string;
   email: string;
   password: string;
@@ -21,16 +20,18 @@ export class RegisterComponent {
     try {
       this.authService.register(this.username, this.email, this.password).subscribe((res: any) => {
         if (res) {
-          this.router.navigateByUrl('/app/devices')
+          this.router.navigateByUrl('/app/devices');
         }
         else {
-          this.router.navigateByUrl('/aut/login')
+          this.router.navigateByUrl('/auth/login');
         }
       });
     } catch (e) {
       console.log(e);
-    } finally {
-      console.log("test");
     }
+  }
+
+  goToLogin() {
+    this.router.navigateByUrl('/auth/login');
   }
 }

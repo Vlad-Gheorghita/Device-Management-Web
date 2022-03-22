@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Device } from '../models/device'
+import { UserLocation } from '../models/user-location';
 
 @Injectable({
   providedIn: 'root'
@@ -41,5 +42,4 @@ export class DevicesService {
   unassignUserFromDevice(deviceId: number) {
     return this.http.put(this.baseUrl + '/device/unassign-device/' + deviceId, {});
   }
-
 }

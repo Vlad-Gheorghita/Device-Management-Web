@@ -12,14 +12,13 @@ import { UserDialogComponent } from './user-dialog/user-dialog.component';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
-
-  users: any = [];
-
-  displayedColumns: string[] = ['position', 'name', 'email', 'roles', 'actions'];
+  users: User[] = [];
+  displayedColumns: string[] = [];
 
   constructor(private userService: UserService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.displayedColumns = ['position', 'name', 'email', 'roles', 'actions'];
     this.getAllUsersPromises();
   }
 
@@ -34,16 +33,16 @@ export class AdminComponent implements OnInit {
     });
   }
 
-  async getAllUsersPromises() {
-    const result = await this.userService.getUsers().toPromise();
-    if (result) {
-      this.users = result;
-    }
+  getAllUsersPromises() {
+    this.userService.getUsers()
+      .subscribe((users: any) => {
+        this.users = users;
+      });
   }
 
   onDelete(id: number) {
-    this.userService.deleteUser(id).pipe(finalize(() => this.getAllUsersPromises())).subscribe(res => {
-      console.log(res);
-    });
+    this.userService.deleteUser(id)
+      .pipe(finalize(() => this.getAllUsersPromises()))
+      .subscribe();
   }
 }

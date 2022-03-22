@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { Device } from 'src/app/libs/models/device';
-import { UserLocation } from 'src/app/libs/models/user-location';
 import { DevicesService } from 'src/app/libs/services/devices.service';
 import { DeviceDialogComponent } from './device-dialog/device-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-devices',
@@ -11,8 +10,8 @@ import { DeviceDialogComponent } from './device-dialog/device-dialog.component';
   styleUrls: ['./devices.component.scss']
 })
 export class DevicesComponent implements OnInit {
-
   devices: Device[] = [];
+
   constructor(private dialog: MatDialog, private devicesService: DevicesService) {
   }
 
@@ -33,7 +32,7 @@ export class DevicesComponent implements OnInit {
     }
   }
 
-  openDialog(device: Device) {
+  openDialog(device?: Device) {
     const dialogRef = this.dialog.open(DeviceDialogComponent, {
       width: 'auto',
       data: device,
@@ -44,18 +43,7 @@ export class DevicesComponent implements OnInit {
     });
   }
 
-  openAddDialog() {
-    const dialogRef = this.dialog.open(DeviceDialogComponent, {
-      width: 'auto',
-    });
-
-    dialogRef.afterClosed().subscribe(() => {
-      this.getAllDevicesPromises();
-    });
-  }
-
   checkAdmin() {
-
     let curentUser = JSON.parse(localStorage.getItem('user'));
     let res = curentUser.roles.find((r: any) => r.name === "Admin");
 

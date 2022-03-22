@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-
   private baseUrl = environment.API_BASEURL;
   private userSubject: BehaviorSubject<User>;
   public user: Observable<User>;
@@ -31,7 +30,6 @@ export class AuthService {
       return user;
     }));
   }
-
 
   logout() {
     localStorage.removeItem('user');

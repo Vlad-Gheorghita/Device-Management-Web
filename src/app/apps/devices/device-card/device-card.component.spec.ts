@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DeviceCardComponent } from './device-card.component';
 
 describe('DeviceCardComponent', () => {
