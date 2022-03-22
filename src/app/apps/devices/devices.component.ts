@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Device } from 'src/app/libs/models/device';
+import { UserLocation } from 'src/app/libs/models/user-location';
 import { DevicesService } from 'src/app/libs/services/devices.service';
 import { DeviceDialogComponent } from './device-dialog/device-dialog.component';
 
@@ -10,6 +11,7 @@ import { DeviceDialogComponent } from './device-dialog/device-dialog.component';
   styleUrls: ['./devices.component.scss']
 })
 export class DevicesComponent implements OnInit {
+
   devices: Device[] = [];
   constructor(private dialog: MatDialog, private devicesService: DevicesService) {
   }

@@ -8,14 +8,11 @@ import { AuthService } from 'src/app/libs/auth/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent{
   email = "";
   password = "";
 
   constructor(private router: Router, private authService: AuthService) { }
-
-  ngOnInit(): void {
-  }
 
   onRegister() {
     this.router.navigateByUrl("/auth/register");

@@ -1,0 +1,11 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)" fxLayout="column" style="width:350px;">
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput required [(ngModel)]="dialogContent.name" name="name"/>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput required [(ngModel)]="dialogContent.email" name="email"/>
+    </mat-form-field>
+    <button mat-raised-button color="accent" (click)="saveUser()">Save</button>
+</form>
