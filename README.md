@@ -1,27 +1,67 @@
-# Client
+# 🌐 Device Management 
+ This is a Device Management System where it keeps track of all the mobile devices the company owns, all the details of the device, location and who is using it at the moment.
+## 🔧 Architecture
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.9.
+<p align="center">
+  <img src="https://github.com/Vlad-Gheorghita/Photos/blob/master/Device%20Management/Device%20Management%20Architecture.png">
+</p><br><br>
 
-## Development server
+## 🎞️ Photos of the application
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Login and register page:
+<p align="center">
+  <img src="https://github.com/Vlad-Gheorghita/Photos/blob/master/Device%20Management/login.jpg" style="width: 38%">
+  <img src="https://github.com/Vlad-Gheorghita/Photos/blob/master/Device%20Management/register.jpg" style="width: 32%">
+</p>
 
-## Code scaffolding
+<br>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### List of devices page with device details: <br>
+By clicking a device from the list, it will pop up a dialog showing the specific device details.
+<p align="center">
+  <img src="https://github.com/Vlad-Gheorghita/Photos/blob/master/Device%20Management/Devices%20User%20View.jpg" style="">
+  <br>
+  <img src="https://github.com/Vlad-Gheorghita/Photos/blob/master/Device%20Management/Device%20Details%20User%20View.jpg" style="width: 30%">
+  <br>
+</p>
 
-## Build
+This page is slightly different in the admin view. A button will appear in order to let the admin to add devices and the device details will let the admin to edit the details of it.
+<p align="center">
+  <img src="https://github.com/Vlad-Gheorghita/Photos/blob/master/Device%20Management/Devices%20from%20Admin%20View.jpg" style="">
+  <br>
+  <img src="https://github.com/Vlad-Gheorghita/Photos/blob/master/Device%20Management/Device%20Details%20Admin%20View.jpg" style="width: 31%">
+  <img src="https://github.com/Vlad-Gheorghita/Photos/blob/master/Device%20Management/Device%20Add%20Admin.jpg" style="width: 30%">
+</p> 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+By logging in as admin you can access other functionalities of the application:
+<p align="center">
+   <img src="https://github.com/Vlad-Gheorghita/Photos/blob/master/Device%20Management/Menu%20Admin%20View.jpg" style="width: 90%">
+</p>
+<br>
 
-## Running unit tests
+### Table of users:
+From this table, the admin can edit the user information or delete the user from the database.
+<br>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<p align="center">
+   <img src="https://github.com/Vlad-Gheorghita/Photos/blob/master/Device%20Management/Users-Table.jpg" style="width: 90%">
+</p>
 
-## Running end-to-end tests
+### Google map page:
+From this page, the admin can see the users location from where they last logged in.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+<p align="center">
+   <img src="https://github.com/Vlad-Gheorghita/Photos/blob/master/Device%20Management/Track-Users.jpg" style="width: 90%">
+</p>
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## :page_with_curl: Features
+
+🔹 User authentication (login and register).<br>
+🔹 User roles.<br>
+🔹 Create/delete/edit device by Admin.<br>
+🔹 Assign/Unassign devices.<br>
+🔹 Track Users by Admin.<br>
+<br>
