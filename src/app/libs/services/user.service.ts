@@ -14,11 +14,11 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getUsers() {
-    return this.http.get(this.baseUrl + '/user');
+    return this.http.get(this.baseUrl + '/user/users');
   }
 
   editUser(user: User) {
-    return this.http.put(this.baseUrl + '/user', {
+    return this.http.put(this.baseUrl + '/user/update', {
       id: user.id,
       name: user.name,
       email: user.email

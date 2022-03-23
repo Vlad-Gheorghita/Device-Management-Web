@@ -2,6 +2,8 @@ import { Component, Inject, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { finalize } from 'rxjs/operators';
+import { Type } from 'src/app/libs/enum/enum';
+import { EnumUtils } from 'src/app/libs/enum/enum-utils';
 import { Device } from 'src/app/libs/models/device';
 import { User } from 'src/app/libs/models/user';
 import { DevicesService } from 'src/app/libs/services/devices.service';
@@ -14,6 +16,8 @@ import { DevicesService } from 'src/app/libs/services/devices.service';
 export class DeviceDialogComponent implements OnInit {
   dialogContent: Device;
   currentUser: User;
+  type: Type;
+  types = EnumUtils.listEnum(Type);
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: Device,
@@ -29,6 +33,7 @@ export class DeviceDialogComponent implements OnInit {
     else {
       this.dialogContent = new Device();
     }
+    
   }
 
   onSubmit(form: NgForm) {

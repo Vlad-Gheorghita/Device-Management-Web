@@ -39,7 +39,7 @@ export class MapComponent implements OnInit {
       scrollwheel: false,
       disableDoubleClickZoom: true,
       maxZoom: 15,
-      minZoom: 8,
+      minZoom: 8
     }
   }
 
@@ -51,7 +51,7 @@ export class MapComponent implements OnInit {
           lng: parseFloat(location.longitude),
         },
         label: {
-          color: 'red',
+          color: 'black',
           text: 'Marker label ',
         },
         title: 'Marker title ',

@@ -1,10 +1,11 @@
+import { Type } from "../enum/enum";
 import { User } from "./user";
 
 export class Device {
     id?: number;
     name?: string;
     manufacturer?: string;
-    type?: string;
+    type?: Type;
     operatingSystem?: string;
     operatingSystemVersion?: string;
     processor?: string;

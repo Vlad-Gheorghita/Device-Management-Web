@@ -1,10 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Device } from '../models/device'
-import { UserLocation } from '../models/user-location';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +15,7 @@ export class DevicesService {
 
 
   getDevices(): Observable<Device[]> {
-    return this.http.get<Device[]>(this.baseUrl + '/device');
+    return this.http.get<Device[]>(this.baseUrl + '/device/devices');
   }
 
   deleteDeviceById(id: number) {
@@ -25,11 +23,11 @@ export class DevicesService {
   }
 
   addDevice(device: Device) {
-    return this.http.post(this.baseUrl + '/device', device);
+    return this.http.post(this.baseUrl + '/device/add', device);
   }
 
   editDevice(device: Device) {
-    return this.http.put(this.baseUrl + '/device', {
+    return this.http.put(this.baseUrl + '/device/edit', {
       id: device.id, name: device.name, manufacturer: device.manufacturer,
       type: 0, operatingSystem: device.operatingSystem, operatingSystemVersion: device.operatingSystemVersion, processor: device.processor, ram: device.ram
     });

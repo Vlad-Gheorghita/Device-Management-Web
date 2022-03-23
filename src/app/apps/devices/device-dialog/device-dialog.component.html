@@ -11,7 +11,9 @@
 
     <mat-form-field appearance="fill">
         <mat-label>Type</mat-label>
-        <input matInput required [(ngModel)]="dialogContent.type" name="type" [disabled]="!checkAdmin()"/>
+        <mat-select [(ngModel)]="dialogContent.type" name="type" [disabled]="!checkAdmin()">
+            <mat-option *ngFor="let item of types" [value]="item.id">{{item.name}}</mat-option>
+        </mat-select>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
@@ -31,7 +33,7 @@
 
     <mat-form-field appearance="fill">
         <mat-label>Ram Memory</mat-label>
-        <input matInput required [(ngModel)]="dialogContent.ram" name="ram" [disabled]="!checkAdmin()"/>
+        <input matInput required [(ngModel)]="dialogContent.ram" name="ram" [disabled]="!checkAdmin()" type="number"/>
     </mat-form-field>
 
     <button mat-button color="primary" [disabled]="checkAssignAction()" (click)="assignUser()">Assign to me</button>
