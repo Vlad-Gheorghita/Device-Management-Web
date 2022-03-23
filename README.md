@@ -1,5 +1,5 @@
 # 🌐 Device Management 
- This is a Device Management System where it keeps track of all the mobile devices the company owns, all the details of the device, location and who is using it at the moment.
+ This is a Device Management System where it keeps track of all the mobile devices the company owns, all the details of the device, location and who is using it at the moment. In this repository is the Web part of the application. To view the API part click [🌐](https://github.com/Vlad-Gheorghita/Device-Management-Api).
 ## 🔧 Architecture
 
 <p align="center">
