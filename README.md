@@ -1,12 +1,12 @@
 # 🌐 Device Management 
- This is a Device Management System where it keeps track of all the mobile devices the company owns, all the details of the device, location and who is using it at the moment. In this repository is the Web part of the application. To view the API part click [🌐](https://github.com/Vlad-Gheorghita/Device-Management-Api).
+ This is a Device Management System where it keeps track of all the mobile devices the company owns, all the details of the device, location and who is using it at the moment. In this repository is the Web part of the application. To view the API part click [Device-Management-Api](https://github.com/Vlad-Gheorghita/Device-Management-Api).
 ## 🔧 Architecture
 
 <p align="center">
   <img src="https://github.com/Vlad-Gheorghita/Photos/blob/master/Device%20Management/Device%20Management%20Architecture.png">
 </p><br><br>
 
-## 🎞️ Photos of the application
+## 🎞️ Preview of the web application
 
 ### Login and register page:
 <p align="center">
